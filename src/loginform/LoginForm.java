@@ -105,6 +105,9 @@ public class LoginForm {
                 }
             }
         });
+        
+        //showing interface
+        frame.setVisible(true);
     }
     
     public static void main(String[] args) {
