@@ -10,7 +10,6 @@ package loginform;
  */
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -87,7 +86,7 @@ public class LoginForm {
         
         //toggle between modes on button click
         toggleButton.addActionListener(new ActionListener() {
-            @Override
+            //@Override
             public void actionPerfomed(ActionEvent e) {
                 if (isLoginMode) {
                     // switching to signup mode
