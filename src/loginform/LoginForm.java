@@ -81,6 +81,12 @@ public class LoginForm {
         toggleButton = new JButton("Switch to Signup");
         toggleButton.setBounds(190, 120, 160, 25);
         panel.add(toggleButton);
+        
+        //toggle between modes on button click
+        toggleButton.addActionListener(new ActionListener() {
+            @Override
+            
+        });
     }
     
     public static void main(String[] args) {
