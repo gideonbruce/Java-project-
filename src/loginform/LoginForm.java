@@ -6,7 +6,7 @@ package loginform;
 
 /**
  *
- * @author Bruce
+ * @author Gideon
  */
 
 import javax.swing.*;
@@ -19,6 +19,7 @@ public class LoginForm {
     
     private JFrame frame;
     private JPanel panel;
+    private JLabel userLabel, passLabel, confirmPassLabel, modelLabel;
     
     public LoginForm() {
         
