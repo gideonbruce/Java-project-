@@ -20,6 +20,8 @@ public class LoginForm {
     private JFrame frame;
     private JPanel panel;
     private JLabel userLabel, passLabel, confirmPassLabel, modelLabel;
+    private JPasswordField passText;
+    private JTextField userText;
     
     public LoginForm() {
         
@@ -37,6 +39,10 @@ public class LoginForm {
         userLabel = new JLabel("Username");
         userLabel.setBounds(10, 20, 80, 25);
         panel.add(userLabel);
+        
+        userText = new JTextField(20);
+        userText.setBounds(100, 20, 165. 25);
+        panel.add(userText);
         
         //text field & labels for password
         passLabel = new JLabel("Password:");
