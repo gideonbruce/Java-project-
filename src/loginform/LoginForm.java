@@ -18,6 +18,7 @@ public class LoginForm {
      */
     
     private JFrame frame;
+    private JPanel panel;
     
     public LoginForm() {
         
@@ -30,6 +31,11 @@ public class LoginForm {
         panel = new JPanel();
         frame.add(panel);
         panel.setLayout(null);
+        
+        //text fields & labels
+        userLabel = new JLabel("Username");
+        userLabel.setBounds(10, 20, 80, 25);
+        panel.add(userLabel);
     }
     
     public static void main(String[] args) {
