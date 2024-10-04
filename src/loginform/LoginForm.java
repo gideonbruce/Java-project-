@@ -84,8 +84,49 @@ public class LoginForm implements ActionListener {
         toggleButton.setBounds(190, 120, 160, 25);
         panel.add(toggleButton);
         
+        //showing interface
+        frame.setVisible(true);
+    }
+    
+    @Override
+    public void actionPerfomed(ActionEvent e) {
+        if (e.getSource() == toggleButton) {
+            if (isLoginMode) {
+                // switching to signup mode
+                confirmPassLabel.setVisible(true);
+                confirmPassText.setVisible(true);
+                loginButton.setVisible(false);
+                signupButton.setVisible(true);
+                toggleButton.setText("Switch to Login");
+                isLoginMode = false;
+            } else {
+                // switching to Login mode
+                confirmPassLabel.setVisible(false);
+                confirmPassText.setVisible(false);
+                loginButton.setVisible(true);
+                signupButton.setVisible(false);
+                toggleButton.setText("Switch to Signup");
+                isLoginMode = true;
+            }
+        } else if (e.getSource() == loginButton) {
+            //login handler
+            String username = userText.getText();
+            String password = new String(passText.getPassword());
+            JOptionPane.showMessageDialog(frame, "Login Attempted for user: "+ username);
+        } else if (e.getSource() == signupButton) {
+            String username = userText.getText();
+            String password = new String(passText.getPassword());
+            String confirmPassword = new String(confirmPassText.getPassword());
+            
+            if (password.equals(confirmPassword)) {
+                JOptionPane.showMessageDialog(frame, "Signup successful for user: "+ username);
+            } else {
+                JOptionPane.showMessageDialog(frame, "Passwords do not match!");
+            }
+        }
+        
         //toggle between modes on button click
-        toggleButton.addActionListener(new ActionListener() {
+       /* toggleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerfomed(java.awt.event.ActionEvent e) {
                 if (isLoginMode) {
@@ -107,9 +148,7 @@ public class LoginForm implements ActionListener {
                 }
             }
         });
-        
-        //showing interface
-        frame.setVisible(true);
+        */
     }
     
     public static void main(String[] args) {
