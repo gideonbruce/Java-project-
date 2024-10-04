@@ -70,7 +70,7 @@ public class LoginForm {
         confirmPassText.setVisible(false);
         
         //login button
-        loginButton.addActionListener(this); //form as listener for each constructor
+         //removed form as listener for each constructor
         loginButton = new JButton("Login");
         loginButton.setBounds(10, 120, 80, 25);
         panel.add(loginButton);
