@@ -27,6 +27,9 @@ public class LoginForm {
     private JTextField userText;
     private JButton loginButton, signupButton, toggleButton;
     
+    //flag to track signup and login modes
+    private boolean isLoginMode = true;
+    
     public LoginForm() {
         
         //frame
@@ -112,6 +115,8 @@ public class LoginForm {
     
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        new LoginForm();
     }
     
 }
