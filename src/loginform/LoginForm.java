@@ -105,44 +105,24 @@ public class LoginForm {
                 signupButton.setVisible(false);
                 toggleButton.setText("Switch to Signup");
                 isLoginMode = true;
-            }
-                
+            }      
         }
     });
-        
-        //showing interface
-        frame.setVisible(true);
-    }
-    
-    @Override
-    public void actionPerfomed(java.awt.event.ActionEvent e) {
-        //event halndling
-        if (e.getSource() == toggleButton) {
-            if (isLoginMode) {
-                // switching to signup mode
-                confirmPassLabel.setVisible(true);
-                confirmPassText.setVisible(true);
-                loginButton.setVisible(false);
-                signupButton.setVisible(true);
-                toggleButton.setText("Switch to Login");
-                isLoginMode = false;
-            } else {
-                // switching to Login mode
-                confirmPassLabel.setVisible(false);
-                confirmPassText.setVisible(false);
-                loginButton.setVisible(true);
-                signupButton.setVisible(false);
-                toggleButton.setText("Switch to Signup");
-                isLoginMode = true;
-            }
-            
-        } else if (e.getSource() == loginButton) {
-            //login handler
+
+    //Action listener for login button
+    loginButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerfomed(ActionEvent e) {
             String username = userText.getText();
             String password = new String(passText.getPassword());
             JOptionPane.showMessageDialog(frame, "Login Attempted for user: "+ username);
-
-        } else if (e.getSource() == signupButton) {
+        }
+    });
+    
+    //Action listener for signup
+    signupButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerfomed(ActionEvent e) {
             String username = userText.getText();
             String password = new String(passText.getPassword());
             String confirmPassword = new String(confirmPassText.getPassword());
@@ -153,13 +133,12 @@ public class LoginForm {
                 JOptionPane.showMessageDialog(frame, "Passwords do not match!");
             }
         }
-        
+    });
+    
+    frame.setVisible(true);
     }
     
     public static void main(String[] args) {
-        // TODO code application logic here
-        
         new LoginForm();
     }
-    
 }
