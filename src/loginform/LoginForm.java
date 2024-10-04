@@ -85,7 +85,25 @@ public class LoginForm {
         //toggle between modes on button click
         toggleButton.addActionListener(new ActionListener() {
             @Override
-            
+            public void actionPerfomed(ActionEvent e) {
+                if (isLoginMode) {
+                    // switching to signup mode
+                    confirmPassLabel.setVisible(true);
+                    confirmPassText.setVisible(true);
+                    loginButton.setVisible(false);
+                    signupButton.setVisible(true);
+                    toggleButton.setText("Switch to Login");
+                    isLoginMode = false;
+                } else {
+                    // switching to Login mode
+                    confirmPassLabel.setVisible(false);
+                    confirmPassText.setVisible(false);
+                    loginButton.setVisible(true);
+                    signupButton.setVisible(false);
+                    toggleButton.setText("Switch to Signup");
+                    isLoginMode = true;
+                }
+            }
         });
     }
     
