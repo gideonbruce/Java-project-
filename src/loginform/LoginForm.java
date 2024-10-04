@@ -57,7 +57,18 @@ public class LoginForm {
         panel.add(passText);
         
         //confirm password label
-        confirm
+        confirmPassLabel = new JLabel("Confirm Password:");
+        confirmPassLabel.setBounds(10, 80, 150, 25);
+        panel.add(confirmPassText);
+        
+        //initially hidden
+        confirmPassLabel.setVisible(false);
+        confirmPassText.setVisible(false);
+        
+        //login button
+        loginButton = new JButton("Login");
+        loginButton.setBounds(10, 120, 80, 25);
+        panel.add(loginButton);
     }
     
     public static void main(String[] args) {
