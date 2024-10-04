@@ -23,8 +23,9 @@ public class LoginForm {
     private JFrame frame;
     private JPanel panel;
     private JLabel userLabel, passLabel, confirmPassLabel, modelLabel;
-    private JPasswordField passText;
+    private JPasswordField passText, confirmPassText;
     private JTextField userText;
+    private JButton loginButton, signupButton, toggleButton;
     
     public LoginForm() {
         
@@ -39,12 +40,12 @@ public class LoginForm {
         panel.setLayout(null);
         
         //text fields & labels for username
-        userLabel = new JLabel("Username");
+        userLabel = new JLabel("Username:");
         userLabel.setBounds(10, 20, 80, 25);
         panel.add(userLabel);
         
         userText = new JTextField(20);
-        userText.setBounds(100, 20, 165. 25);
+        userText.setBounds(100, 10, 165, 25);
         panel.add(userText);
         
         //text field & labels for password
@@ -69,6 +70,10 @@ public class LoginForm {
         loginButton = new JButton("Login");
         loginButton.setBounds(10, 120, 80, 25);
         panel.add(loginButton);
+        
+        //signup button
+        signupButton = new JButton("Signup");
+        signupButton.setBounds(100, 120, 80, 25);
     }
     
     public static void main(String[] args) {
