@@ -13,7 +13,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginForm {
+public class LoginForm implements ActionListener {
 
     /**
      * @param args the command line arguments
@@ -86,8 +86,8 @@ public class LoginForm {
         
         //toggle between modes on button click
         toggleButton.addActionListener(new ActionListener() {
-            //@Override
-            public void actionPerfomed(ActionEvent e) {
+            @Override
+            public void actionPerfomed(java.awt.event.ActionEvent e) {
                 if (isLoginMode) {
                     // switching to signup mode
                     confirmPassLabel.setVisible(true);
