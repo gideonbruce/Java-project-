@@ -50,7 +50,14 @@ public class LoginForm {
         //text field & labels for password
         passLabel = new JLabel("Password:");
         passLabel.setBounds(10, 50, 80, 25);
+        panel.add(passLabel);
+        
+        passText = new JPasswordField(20);
+        passText.setBounds(100, 50, 165, 25);
         panel.add(passText);
+        
+        //confirm password label
+        confirm
     }
     
     public static void main(String[] args) {
