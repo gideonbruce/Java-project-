@@ -33,10 +33,15 @@ public class LoginForm {
         frame.add(panel);
         panel.setLayout(null);
         
-        //text fields & labels
+        //text fields & labels for username
         userLabel = new JLabel("Username");
         userLabel.setBounds(10, 20, 80, 25);
         panel.add(userLabel);
+        
+        //text field & labels for password
+        passLabel = new JLabel("Password:");
+        passLabel.setBounds(10, 50, 80, 25);
+        panel.add(passText);
     }
     
     public static void main(String[] args) {
