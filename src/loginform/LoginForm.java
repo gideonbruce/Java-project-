@@ -91,51 +91,52 @@ public class LoginForm {
             @Override
             public void actionPerfomed(ActionEvent e) {
                 if (isLoginMode) {
-                confirmPassLabel.setVisible(true);
-                confirmPassText.setVisible(true);
-                loginButton.setVisible(false);
-                signupButton.setVisible(true);
-                toggleButton.setText("Switch to Login");
-                isLoginMode = false;
-            } else {
+                    confirmPassLabel.setVisible(true);
+                    confirmPassText.setVisible(true);
+                    loginButton.setVisible(false);
+                    signupButton.setVisible(true);
+                    toggleButton.setText("Switch to Login");
+                    isLoginMode = false;
+                } else {
                 // switching to Login mode
-                confirmPassLabel.setVisible(false);
-                confirmPassText.setVisible(false);
-                loginButton.setVisible(true);
-                signupButton.setVisible(false);
-                toggleButton.setText("Switch to Signup");
-                isLoginMode = true;
-            }      
-        }
-    });
-
-    //Action listener for login button
-    loginButton.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerfomed(ActionEvent e) {
-            String username = userText.getText();
-            String password = new String(passText.getPassword());
-            JOptionPane.showMessageDialog(frame, "Login Attempted for user: "+ username);
-        }
-    });
-    
-    //Action listener for signup
-    signupButton.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerfomed(ActionEvent e) {
-            String username = userText.getText();
-            String password = new String(passText.getPassword());
-            String confirmPassword = new String(confirmPassText.getPassword());
-            
-            if (password.equals(confirmPassword)) {
-                JOptionPane.showMessageDialog(frame, "Signup successful for user: "+ username);
-            } else {
-                JOptionPane.showMessageDialog(frame, "Passwords do not match!");
+                    confirmPassLabel.setVisible(false);
+                    confirmPassText.setVisible(false);
+                    loginButton.setVisible(true);
+                    signupButton.setVisible(false);
+                    toggleButton.setText("Switch to Signup");
+                    isLoginMode = true;
+                }      
             }
-        }
-    });
+        });
+
+        //Action listener for login button
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerfomed(ActionEvent e) {
+                String username = userText.getText();
+                String password = new String(passText.getPassword());
+                JOptionPane.showMessageDialog(frame, "Login Attempted for user: "+ username);
+            }
+        });
     
-    frame.setVisible(true);
+        //Action listener for signup
+        signupButton.addActionListener(new ActionListener() {
+           @Override
+            public void actionPerfomed(ActionEvent e) {
+                String username = userText.getText();
+                String password = new String(passText.getPassword());
+                String confirmPassword = new String(confirmPassText.getPassword());
+            
+                if (password.equals(confirmPassword)) {
+                JOptionPane.showMessageDialog(frame, "Signup successful for user: "+ username);
+                } else {
+                JOptionPane.showMessageDialog(frame, "Passwords do not match!");
+                }
+            }
+        });
+    
+    
+        frame.setVisible(true);
     }
     
     public static void main(String[] args) {
