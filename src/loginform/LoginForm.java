@@ -25,6 +25,11 @@ public class LoginForm {
         frame = new JFrame("Login/Signup Form");
         frame.setSize(400, 250);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        //create panel
+        panel = new JPanel();
+        frame.add(panel);
+        panel.setLayout(null);
     }
     
     public static void main(String[] args) {
