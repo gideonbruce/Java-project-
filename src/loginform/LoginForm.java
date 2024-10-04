@@ -89,7 +89,7 @@ public class LoginForm {
         // action listener
         toggleButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerfomed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {
                 if (isLoginMode) {
                     confirmPassLabel.setVisible(true);
                     confirmPassText.setVisible(true);
@@ -112,7 +112,7 @@ public class LoginForm {
         //Action listener for login button
         loginButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerfomed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {
                 String username = userText.getText();
                 String password = new String(passText.getPassword());
                 JOptionPane.showMessageDialog(frame, "Login Attempted for user: "+ username);
@@ -122,7 +122,7 @@ public class LoginForm {
         //Action listener for signup
         signupButton.addActionListener(new ActionListener() {
            @Override
-            public void actionPerfomed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {
                 String username = userText.getText();
                 String password = new String(passText.getPassword());
                 String confirmPassword = new String(confirmPassText.getPassword());
