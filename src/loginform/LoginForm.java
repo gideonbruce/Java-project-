@@ -13,7 +13,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginForm implements ActionListener {
+public class LoginForm {
 
     /**
      * @param args the command line arguments
@@ -66,10 +66,6 @@ public class LoginForm implements ActionListener {
         confirmPassText = new JPasswordField(20);
         confirmPassText.setBounds(150, 80, 165, 25);
         panel.add(confirmPassText);
-        confirmPassLabel.setVisible(false);
-        confirmPassText.setVisible(false);
-        
-        //initially hidden
         confirmPassLabel.setVisible(false);
         confirmPassText.setVisible(false);
         
