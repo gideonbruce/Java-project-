@@ -8,14 +8,23 @@ package loginform;
  *
  * @author Bruce
  */
+
+import javax.swing.*;
+
 public class LoginForm {
 
     /**
      * @param args the command line arguments
      */
     
+    private JFrame frame;
+    
     public LoginForm() {
         
+        //frame
+        frame = new JFrame("Login/Signup Form");
+        frame.setSize(400, 250);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
     public static void main(String[] args) {
