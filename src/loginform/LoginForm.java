@@ -13,6 +13,11 @@ public class LoginForm {
     /**
      * @param args the command line arguments
      */
+    
+    public LoginForm() {
+        
+    }
+    
     public static void main(String[] args) {
         // TODO code application logic here
     }
