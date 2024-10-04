@@ -74,6 +74,13 @@ public class LoginForm {
         //signup button
         signupButton = new JButton("Signup");
         signupButton.setBounds(100, 120, 80, 25);
+        signupButton.setVisible(false); //hide initially
+        panel.add(signupButton);
+        
+        //changing the button between login and signup interfaces
+        toggleButton = new JButton("Switch to Signup");
+        toggleButton.setBounds(190, 120, 160, 25);
+        panel.add(toggleButton);
     }
     
     public static void main(String[] args) {
