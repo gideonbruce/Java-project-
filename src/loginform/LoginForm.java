@@ -125,7 +125,7 @@ public class LoginForm {
                 String username = userText.getText();
                 String password = new String(passText.getPassword());
                 if (loginUser(username, password)) {
-                    JOptionPane.showMessageDialog(frame, "Login Attempted for user: "+ username);
+                    JOptionPane.showMessageDialog(frame, "Login Succesful for user: "+ username);
                 } else {
                     JOptionPane.showMessageDialog(frame, "Invalid username or password!");
                 }
@@ -158,13 +158,14 @@ public class LoginForm {
     
     private boolean loginUser(String username, String password) {
         try (Connection connection = DriverManager.getConnection(Database_Url, USER, PASSWORD)) {
-            String query = "SELECT * FROM user WHERE username = ? AND password = ?";
+            String query = "SELECT * FROM users WHERE username = ? AND password = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();
             return resultSet.next(); //(return true if matcing user is found)
         } catch (Exception ex) {
+            System.out.println("FAILED!");
             ex.printStackTrace();
             return false;
         }
