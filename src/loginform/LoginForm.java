@@ -36,7 +36,7 @@ public class LoginForm {
     
     private static final String Database_Url = "jdbc:mysql://localhost:3306/login_form";
     private static final String USER = "root";
-    private static final String PASSWORD = " ";
+    private static final String PASSWORD = "";
     
     public LoginForm() {
         
@@ -172,7 +172,7 @@ public class LoginForm {
     
     private boolean signupUser(String username, String password) {
         try (Connection connection = DriverManager.getConnection(Database_Url, USER, PASSWORD)) {
-            String query = "INSERT INTO user (username, password) VALUES (?, ?)";
+            String query = "INSERT INTO users (username, password) VALUES (?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
