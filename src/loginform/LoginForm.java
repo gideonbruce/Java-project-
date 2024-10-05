@@ -157,6 +157,20 @@ public class LoginForm {
         }
     }
     
+    private boolean signupUser(String username, String password) {
+        try (Connection connection = DriverManager.getConnection(Database_Url, USER, PASSWORD)) {
+            String query = "INSERT INTO users (username, password) VALUES (?, ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0; //return true if insert is successful
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+    
     public static void main(String[] args) {
         new LoginForm();
     }
