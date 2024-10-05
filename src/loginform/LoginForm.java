@@ -12,6 +12,11 @@ package loginform;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 
 public class LoginForm {
 
@@ -167,7 +172,7 @@ public class LoginForm {
             return rowsAffected > 0; //return true if insert is successful
         } catch (Exception ex) {
             ex.printStackTrace();
-            return false;
+            return false; 
         }
     }
     
