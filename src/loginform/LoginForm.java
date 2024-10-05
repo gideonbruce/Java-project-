@@ -29,15 +29,19 @@ public class LoginForm {
     //flag to track signup and login modes
     private boolean isLoginMode = true;
     
+    private static final String Database_Url = "jdbc:mysql://localhost:3306/login_form";
+    private static final String USER = "root";
+    private static final String PASSWORD = " ";
+    
     public LoginForm() {
         
         //frame
-        frame = new JFrame("Login/Signup Form");
-        frame.setSize(400, 250);
+        frame = new JFrame("Login Form");
+        frame.setSize(800, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //create panel
-        panel = new JPanel();
+        panel = new JPanel(); 
         frame.add(panel);
         panel.setLayout(null);
         
@@ -81,7 +85,7 @@ public class LoginForm {
         panel.add(signupButton);
         
         //changing the button between login and signup interfaces
-        toggleButton = new JButton("Switch to Signup");
+        toggleButton = new JButton("Signup");
         toggleButton.setBounds(190, 120, 160, 25);
         panel.add(toggleButton);
         
@@ -103,7 +107,7 @@ public class LoginForm {
                     confirmPassText.setVisible(false);
                     loginButton.setVisible(true);
                     signupButton.setVisible(false);
-                    toggleButton.setText("Switch to Signup");
+                    toggleButton.setText("Signup");
                     isLoginMode = true;
                 }      
             }
