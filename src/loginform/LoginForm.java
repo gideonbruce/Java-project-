@@ -141,7 +141,11 @@ public class LoginForm {
                 String confirmPassword = new String(confirmPassText.getPassword());
             
                 if (password.equals(confirmPassword)) {
-                JOptionPane.showMessageDialog(frame, "Signup successful for user: "+ username);
+                    if (signupUser(username, password)) {
+                        JOptionPane.showMessageDialog(frame, "Signup successful for user: "+ username);
+                    } else {
+                        JOptionPane.showMessageDialog(frame, "Signup failed! User might already exist");
+                    }
                 } else {
                 JOptionPane.showMessageDialog(frame, "Passwords do not match!");
                 }
