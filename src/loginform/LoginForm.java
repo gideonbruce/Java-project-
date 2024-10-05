@@ -143,6 +143,15 @@ public class LoginForm {
         frame.setVisible(true);
     }
     
+    private boolean loginUser(String username, String password) {
+        try (Connection connection = DriverManager.getConnection(Database_Url, USER, PASSWORD)) {
+            String query = "SELECT * FROM users WHERE username = ? AND password = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
+        }
+    }
+    
     public static void main(String[] args) {
         new LoginForm();
     }
