@@ -149,6 +149,11 @@ public class LoginForm {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            return resultSet.next(); //(return true if matcing user is found)
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
         }
     }
     
