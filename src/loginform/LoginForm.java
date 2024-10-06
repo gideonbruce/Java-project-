@@ -30,6 +30,7 @@ public class LoginForm {
     private JPasswordField passText, confirmPassText;
     private JTextField userText;
     private JButton loginButton, signupButton, toggleButton;
+    private JCheckBox showPasswordCheckBox;
     
     //flag to track signup and login modes
     private boolean isLoginMode = true;
@@ -69,20 +70,20 @@ public class LoginForm {
         panel.add(passText);
         
         //show password
-        showPasswordCheckbox = new JCheckBox("Show Password");
-        showPasswordCheckbox.setBounds(100, 80, 165, 25);
+        showPasswordCheckBox = new JCheckBox("Show Password");
+        showPasswordCheckBox.setBounds(100, 80, 165, 25);
         panel.add(showPasswordCheckBox);
         //action listener to hide/show password
-        showPasswordCheckbox.addActionListener(new ActionListener() {
+        showPasswordCheckBox.addActionListener(new ActionListener() {
             @Override
-            public void actionPerfomed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {
                 if (showPasswordCheckBox.isSelected()) {
                     passText.setEchoChar((char) 0); //shows password as plaintext
                 } else {
                     passText.setEchoChar('*'); //hide
                 }
             }
-        })
+        });
         
         //confirm password label
         confirmPassLabel = new JLabel("Confirm Password:");
