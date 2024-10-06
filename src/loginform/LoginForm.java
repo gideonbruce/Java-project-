@@ -68,6 +68,22 @@ public class LoginForm {
         passText.setBounds(100, 50, 165, 25);
         panel.add(passText);
         
+        //show password
+        showPasswordCheckbox = new JCheckBox("Show Password");
+        showPasswordCheckbox.setBounds(100, 80, 165, 25);
+        panel.add(showPasswordCheckBox);
+        //action listener to hide/show password
+        showPasswordCheckbox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerfomed(ActionEvent e) {
+                if (showPasswordCheckBox.isSelected()) {
+                    passText.setEchoChar((char) 0); //shows password as plaintext
+                } else {
+                    passText.setEchoChar('*'); //hide
+                }
+            }
+        })
+        
         //confirm password label
         confirmPassLabel = new JLabel("Confirm Password:");
         confirmPassLabel.setBounds(10, 80, 150, 25);
@@ -144,7 +160,7 @@ public class LoginForm {
                     if (signupUser(username, password)) {
                         JOptionPane.showMessageDialog(frame, "Signup successful for user: "+ username);
                     } else {
-                        JOptionPane.showMessageDialog(frame, "Signup failed! User might already exist");
+                        JOptionPane.showMessageDialog(frame, "Signup failed! User already exists");
                     }
                 } else {
                 JOptionPane.showMessageDialog(frame, "Passwords do not match!");
